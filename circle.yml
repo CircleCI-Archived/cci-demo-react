@@ -28,3 +28,6 @@ stages:
             git config --global push.default simple
             git push -f git@heroku.com:cci-demo-react.git
           fi
+      - type: shell
+        name: Test
+        command: ls -lah ~/
