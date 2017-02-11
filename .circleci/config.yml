@@ -13,7 +13,7 @@ jobs:
       - shell:
           name: NPM Test
           command: npm test
-      - artifacts_store:
+      - store_artifacts:
           path: /home/ubuntu/artifacts
       - deploy:
           command: |
