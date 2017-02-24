@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Pre-Dependencies
-          command: mkdir /home/ubuntu/artifacts
+          command: mkdir -p /home/ubuntu/cci-demo-react/artifacts
       - run:
           name: Install Dependencies
           command: npm install
@@ -16,7 +16,8 @@ jobs:
           name: NPM Test
           command: npm test
       - store_artifacts:
-          path: /home/ubuntu/artifacts
+          path: /home/ubuntu/cci-demo-react/artifacts
+      - add_ssh_keys
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
