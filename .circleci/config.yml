@@ -3,7 +3,7 @@ jobs:
   build:
     docker: 
       - image: node:7.4.0
-    working_directory: /home/ubuntu/cci-demo-react
+    working_directory: ~/cci-demo-react
     steps:
       - checkout
       - run:
