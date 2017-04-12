@@ -6,15 +6,9 @@ jobs:
     working_directory: /home/ubuntu/cci-demo-react
     steps:
       - checkout
-      - run:
-          name: Pre-Dependencies
-          command: mkdir -p /home/ubuntu/cci-demo-react/artifacts
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: NPM Test
-          command: npm test
+      - run: mkdir -p /home/ubuntu/cci-demo-react/artifacts
+      - run: npm install
+      - run: npm test
       - store_artifacts:
           path: /home/ubuntu/cci-demo-react/artifacts
       - add_ssh_keys
